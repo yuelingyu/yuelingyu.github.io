@@ -1,18 +1,16 @@
 {
   "basics": {
     "name": "Lingyu Yue",
-    "label": "Scientist",
+    "label": "Assistant Researcher",
     "image": "",
-    "email": "yuelingyu@nimte.ac.cn",
-    "phone": "(86) 13521141297",
+    "email": "yuelingyu(at)nimte(dot)ac(dot)cn",
     "url": "https://yuelingyu.github.io/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "summary": "Researcher focused on multiscale modeling and thermal-mechanical simulation of thermoplastic composite materials, as well as the study of aging effects in these materials. Expertise in experimental mechanics and time-dependent material mechanics",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "city": "Beijing",
+      "countryCode": "CN",
+      "region": "Beijing"
+
     },
     "profiles": [
       {
@@ -24,134 +22,122 @@
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "name": "Ningbo Institute of Materials Technology and Engineering, Chinese Academy of Sciences (NIMTE, CAS)",
+      "position": "Postdoctoral Researcher",
+      "location": "Ningbo, China",
+      "url": "http://www.nimte.ac.cn/",
+      "startDate": "2022-07",
+      "summary": "Research focus on carbon fiber reinforced thermoplastic composite materials forming process simulation and composite structure design with mechanical performance prediction.",
+      "highlights": [
+        "Carbon Fiber Reinforced Thermoplastic Composite Materials Forming Process Simulation Research",
+        "Composite Material Structure Design and Mechanical Performance Prediction"
+      ]
+    },
+    {
+      "name": "Multiscale Mechanics Laboratory, Faculty of Engineering, Université de Montréal",
+      "position": "Research Assistant",
+      "location": "Montreal, Canada",
+      "url": "https://www.polymtl.ca/",
+      "startDate": "2017-01",
+      "endDate": "2022-04",
+      "summary": "Research focus on mechanical property characterization and prediction of thermoplastic polymer materials under harsh service conditions.",
+      "highlights": [
+        "Mechanical Property Characterization and Prediction of Thermoplastic Polymer Materials under Harsh Service Conditions"
+      ]
     }
   ],
   "volunteer": [
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "organization": "Experimental Mechanics,Mechanics of Time-Dependent Materials",
+      "position": "Peer Reviewer",
+      "summary": "International journal peer reviewer"
+
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "Montreal Polytechnique",
+      "location": "Montreal, Canada",
+      "area": "Mechanical Engineering",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "startDate": "2017",
+      "endDate": "2022"
+    },
+    {
+      "institution": "École Nationale des Ponts et Chaussées",
+      "location": "Paris, France", 
+      "area": "Durability of Materials and Energy Structures",
+      "studyType": "Master",
+      "startDate": "2015",
+      "endDate": "2016"
+    },
+    {
+      "institution": "École Spéciale des Travaux Publics, du Bâtiment et de l'Industrie (ESTP Paris)",
+      "location": "Paris, France", 
+      "area": "Civial Engineering",
+      "studyType": "Master",
+      "startDate": "2013",
+      "endDate": "2015"
+    },
+    {
+      "institution": "Hohai University",
+      "location": "Nanjing, China",
+      "url": "https://www.hhu.edu.cn/",
+      "area": "Engineering Mechanics",
+      "studyType": "Bachelor",
+      "startDate": "2009-09",
+      "endDate": "2013-07"
     }
   ],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
+  
   "publications": [
     {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
+      "name": "A dual-scale three-dimensional thermo-viscoelastic model for the hot stamping simulation of thermoplastic composites",
+      "publisher": "Polymer Composites",
+      "releaseDate": "2023-01-01",
+      "url": "https://doi.org/10.1002/pc.27200",
+      "summary": "Yue, L., Zhu, Y., Liu, D., Yan, C., Chen, G., & Chen, M. (2023). Volume 44(3), 1725-1740. Cited 2 times."
     },
     {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
+      "name": "On the Strain Measurement for Thermoplastics with Bi-Axial Extensometers in Thermo-Mechanical Testing: A Case of Characterizing Temperature and Physical Aging Effects on Polycarbonate",
+      "publisher": "Experimental Mechanics",
+      "releaseDate": "2022-01-01",
+      "url": "https://doi.org/10.1007/s11340-022-0890-2",
+      "summary": "Yue, L., Jalbert, J., Heuzey, M. C., & Lévesque, M. (2022). Volume 62(9), 1691-1699. Cited 2 times."
     },
     {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
-    }
-  ],
-  "skills": [
+      "name": "On the parameters identification of three-dimensional aging-temperature-dependent viscoelastic solids through a Bayesian approach",
+      "publisher": "Mechanics of Time-Dependent Materials",
+      "releaseDate": "2022-01-01",
+      "url": "https://doi.org/10.1007/s11343-022-09564-x",
+      "summary": "Yue, L., Heuzey, M. C., Jalbert, J., & Lévesque, M. (2022). Pages 1-23. Cited 3 times."
+    },
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "name": "On the tri-dimensional constitutive theory identification of linearly viscoelastic solids based on Bayesian framework",
+      "publisher": "International Journal of Solids and Structures",
+      "releaseDate": "2021-01-01",
+      "url": "https://doi.org/10.1016/j.ijsolst.2021.111157",
+      "summary": "Yue, L., Heuzey, M. C., Jalbert, J., & Lévesque, M. (2021). Volume 230, 111157. Cited 2 times."
+    },
+    {
+      "name": "Surrogate optimization of a lattice foot orthotic",
+      "publisher": "Computers in Biology and Medicine",
+      "releaseDate": "2023-01-01",
+      "url": "https://doi.org/10.1016/j.compbiomed.2022.106376",
+      "summary": "Moeini, M., Yue, L., Begon, M., & Lévesque, M. (2023). Volume 155, 106376. Cited 2 times."
+    },
+    {
+      "name": "Computationally efficient model to predict the deformations of a cellular foot orthotic",
+      "publisher": "Computers in Biology and Medicine",
+      "releaseDate": "2022-01-01",
+      "url": "https://doi.org/10.1016/j.compbiomed.2022.105532",
+      "summary": "Moeini, M., Ménard, A. L., Yue, L., Hajizadeh, M., Begon, M., & Levesque, M. (2022). Article 105532."
     }
   ],
+  
   "languages": [
     {
-      "language": "German",
+      "language": "Mandarian",
       "fluency": "Native speaker",
       "icon": ""
     },
@@ -159,42 +145,13 @@
       "language": "English",
       "fluency": "Fluent",
       "icon": ""
-    }
-  ],
-  "interests": [
-    {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     },
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
-  "projects": [
-    {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "language": "French",
+      "fluency": "Fluent",
+      "icon": ""
     }
   ]
+
+
 }
