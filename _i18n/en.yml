@@ -1,0 +1,13 @@
+about:
+  title: "About"
+  description: "Welcome! This is the English version of my About page."
+navbar:
+  about: "About"
+  cv: "CV"
+  projects: "Projects"
+  blog: "Blog"
+  books: "Books"
+  news: "News"
+  submenus: "Submenus"
+  bookshelf: "Bookshelf"
+  divider: "Divider"

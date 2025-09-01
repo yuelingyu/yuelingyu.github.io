@@ -1,0 +1,13 @@
+about:
+  title: "关于"
+  description: "欢迎！这是我的关于页面中文版。"
+navbar:
+  about: "关于"
+  cv: "简历"
+  projects: "项目"
+  blog: "博客"
+  books: "书籍"
+  news: "新闻"
+  submenus: "子菜单"
+  bookshelf: "书架"
+  divider: "分隔线"
