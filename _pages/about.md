@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='#'>Assistant Researcher at Ningbo Institute of Materials Technology and Engineering
 
 profile:
   align: right
@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My name is Lingyu Yue (岳凌宇). I am currently working as a Postdoctoral Researcher at Ningbo Institute of Materials Technology and Engineering, Chinese Academy of Sciences. Previously, I worked as a Research Assistant at the Multiscale Mechanics Laboratory, Faculty of Engineering, Université de Montréal (2017-2022).
+My name is Lingyu Yue (岳凌宇). I am currently working as a Assistant Researcher at Ningbo Institute of Materials Technology and Engineering, Chinese Academy of Sciences. Previously, I worked as a Research Assistant at the Multiscale Mechanics Laboratory, Faculty of Engineering, Université de Montréal (2017-2022).
 
 I obtained my PhD in Mechanical Engineering from Montreal Polytechnique (2017-2022), my Master's degree in Civial Engineering from École Spéciale des Travaux Publics, du Bâtiment et de l'Industrie (ESTP Paris) (2013-2015), and my Bachelor's degree in Engineering Mechanics from Hohai University (2009-2013).
 

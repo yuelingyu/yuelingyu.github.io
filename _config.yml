@@ -18,6 +18,19 @@ keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your o
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
+languages: ["en", "zh"]
+default_lang: "en"
+exclude_from_localizations:
+  - assets/**
+  - _bibliography/**
+  - _data/**
+  - _includes/**
+  - _layouts/**
+  - _plugins/**
+  - _sass/**
+  - bin/**
+  - vendor/**
+
 url: https://yuelingyu.github.io # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
@@ -215,6 +228,7 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
+  - jekyll-multiple-languages-plugin
 
 # Sitemap settings
 defaults:
@@ -642,3 +656,37 @@ jsonresume:
   - languages
   - interests
   - references
+
+# -----------------------------------------------------------------------------
+# Multi-language settings
+# -----------------------------------------------------------------------------
+
+languages: ["en", "zh"]
+default_lang: "en"
+
+exclude_from_localizations:
+  - assets/
+  - _bibliography/
+  - _sass/
+  - _plugins/
+  - _data/
+  - _includes/
+  - _layouts/
+  - _projects/
+  - _books/
+  - _news/
+  - _scripts/
+  - bin/
+  - vendor/
+  - Dockerfile
+  - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - purgecss.config.js
+  - README.md
+  - LICENSE
+  - robots.txt
+  - lighthouse_results/
+  - readme_preview/

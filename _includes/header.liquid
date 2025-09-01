@@ -135,6 +135,15 @@
               </button>
             </li>
           {% endif %}
+          {% if site.languages and site.languages.size > 1 %}
+            <li class="toggle-container">
+              {% if page.lang == "en" %}
+                <a class="nav-link" href="{{ site.baseurl }}/zh{{ page.url | remove_first: '/en' }}">中文</a>
+              {% else %}
+                <a class="nav-link" href="{{ site.baseurl }}/en{{ page.url | remove_first: '/zh' }}">English</a>
+              {% endif %}
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>
