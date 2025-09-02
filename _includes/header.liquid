@@ -158,22 +158,43 @@
                 <i class="ti ti-sun-filled" id="light-toggle-light"></i>
               </button>
             </li>
-          {% endif %}         
+          {% endif %}           
+          
           {% if site.languages and site.languages.size > 1 %}
             <li class="toggle-container">
-              {% if page.url contains '/zh/' %}
-                <!-- Current page is Chinese, show English switcher -->
-                {% assign clean_url = page.url | remove_first: '/zh' %}
-                <a class="nav-link" href="{{ site.baseurl }}/en{{ clean_url }}">{{ site.data.i18n.en.language_switcher | default: "English" }}</a>
-              {% else %}
-                <!-- Current page is English or default, show Chinese switcher -->
-                {% if page.url contains '/en/' %}
-                  {% assign clean_url = page.url | remove_first: '/en' %}
-                {% else %}
-                  {% assign clean_url = page.url %}
+              {% comment %} 智能语言切换逻辑 {% endcomment %}
+              {% assign current_page_path = page.url %}
+              
+              {% if current_page_path contains '/zh/' %}
+                {% comment %} 当前是中文页面，显示英文切换 {% endcomment %}
+                {% assign target_lang = 'en' %}
+                {% assign display_text = site.data.i18n.zh.language_switcher | default: "English" %}
+                {% assign clean_path = current_page_path | remove_first: '/zh' %}
+                {% if clean_path == '' %}
+                  {% assign clean_path = '/about/' %}
                 {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/zh{{ clean_url }}">{{ site.data.i18n.zh.language_switcher | default: "中文" }}</a>
+                {% assign target_url = '/en' | append: clean_path %}
+              {% elsif current_page_path contains '/en/' %}
+                {% comment %} 当前是英文页面，显示中文切换 {% endcomment %}
+                {% assign target_lang = 'zh' %}
+                {% assign display_text = site.data.i18n.en.language_switcher | default: "中文" %}
+                {% assign clean_path = current_page_path | remove_first: '/en' %}
+                {% if clean_path == '' %}
+                  {% assign clean_path = '/about/' %}
+                {% endif %}
+                {% assign target_url = '/zh' | append: clean_path %}
+              {% else %}
+                {% comment %} 默认语言（通常是英文），显示中文切换 {% endcomment %}
+                {% assign target_lang = 'zh' %}
+                {% assign display_text = site.data.i18n.en.language_switcher | default: "中文" %}
+                {% if current_page_path == '/' %}
+                  {% assign target_url = '/zh/about/' %}
+                {% else %}
+                  {% assign target_url = '/zh' | append: current_page_path %}
+                {% endif %}
               {% endif %}
+              
+              <a class="nav-link" href="{{ site.baseurl }}{{ target_url }}">{{ display_text }}</a>
             </li>
           {% endif %}
         </ul>

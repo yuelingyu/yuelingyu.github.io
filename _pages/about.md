@@ -1,7 +1,8 @@
 ---
 layout: about
 title: about
-permalink: /about/
+permalink: /about-backup/
+nav: false
 subtitle: <a href='#'>Assistant Researcher at Ningbo Institute of Materials Technology and Engineering
 
 profile:
