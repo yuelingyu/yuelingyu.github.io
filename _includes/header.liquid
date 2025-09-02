@@ -58,12 +58,28 @@
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
-          </li>
-
+          </li>          
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% if p.nav and p.autogen == null %}             
+            {% if p.nav and p.autogen == null %}
+              {% comment %} 确定当前页面的语言 {% endcomment %}
+              {% if page.url contains '/zh/' %}
+                {% assign current_lang = "zh" %}
+              {% else %}
+                {% assign current_lang = "en" %}
+              {% endif %}
+              
+              {% comment %} 只显示与当前语言匹配的页面 {% endcomment %}
+              {% assign show_page = false %}
+              {% if p.lang == current_lang %}
+                {% assign show_page = true %}
+              {% elsif p.lang == null and current_lang == "en" %}
+                {% comment %} 对于没有lang属性的页面，只在英文模式下显示 {% endcomment %}
+                {% assign show_page = true %}
+              {% endif %}
+              
+              {% if show_page %}
              {% if p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
@@ -136,8 +152,7 @@
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
-                  </a>
-                </li>
+                  </a>                </li>
               {% endif %}
             {% endif %}
           {% endfor %}

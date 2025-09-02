@@ -2,7 +2,7 @@
 layout: about
 lang: en
 title: About
-permalink: /en/about/
+permalink: /about/
 
 subtitle: <a href='#'>Assistant Researcher at Ningbo Institute of Materials Technology and Engineering
 
