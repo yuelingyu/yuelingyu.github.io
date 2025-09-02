@@ -152,7 +152,8 @@
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
-                  </a>                </li>
+                  </a>                
+                  </li>
               {% endif %}
             {% endif %}
           {% endfor %}
@@ -208,7 +209,6 @@
                   {% assign target_url = '/zh' | append: current_page_path %}
                 {% endif %}
               {% endif %}
-              
               <a class="nav-link" href="{{ site.baseurl }}{{ target_url }}">{{ display_text }}</a>
             </li>
           {% endif %}
