@@ -1,5 +1,6 @@
 ---
 layout: none
+lang: en
 permalink: /
 ---
 {% if page.lang == "zh" or site.active_lang == "zh" %}
