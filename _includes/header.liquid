@@ -134,14 +134,14 @@
                 <i class="ti ti-sun-filled" id="light-toggle-light"></i>
               </button>
             </li>
-          {% endif %}
-          {% if site.languages and site.languages.size > 1 %}
+          {% endif %}         
+           {% if site.languages and site.languages.size > 1 %}
             <li class="toggle-container">
-              {% assign current_lang = page.lang | default: site.default_lang %}
+              {% assign current_lang = page.lang | default: site.default_lang | default: "en" %}
               {% if current_lang == "en" %}
-                <a class="nav-link" href="{{ site.baseurl }}/zh{{ page.url | remove_first: '/en' }}">{{ site.data.i18n.zh.language_switcher }}</a>
+                <a class="nav-link" href="{{ site.baseurl }}/zh{{ page.url | remove_first: '/en' }}">{{ site.data.i18n.zh.language_switcher | default: "中文" }}</a>
               {% else %}
-                <a class="nav-link" href="{{ site.baseurl }}/en{{ page.url | remove_first: '/zh' }}">{{ site.data.i18n.en.language_switcher }}</a>
+                <a class="nav-link" href="{{ site.baseurl }}/en{{ page.url | remove_first: '/zh' }}">{{ site.data.i18n.en.language_switcher | default: "English" }}</a>
               {% endif %}
             </li>
           {% endif %}
