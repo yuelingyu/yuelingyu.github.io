@@ -1,1 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta http-equiv="refresh" content="0; url=/zh/en/about/"> </head></html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <p>&lt;!DOCTYPE html&gt;</p> <meta charset="utf-8"> <title>Redirecting...</title> <script>
+    // 智能语言检测和重定向
+    function redirectToLanguage() {
+      var userLang = navigator.language || navigator.userLanguage || 'en';
+      var isZh = userLang.toLowerCase().indexOf('zh') === 0;
+      
+      // 检查是否有存储的语言偏好
+      var savedLang = localStorage.getItem('preferred-language');
+      if (savedLang && (savedLang === 'zh' || savedLang === 'en')) {
+        isZh = (savedLang === 'zh');
+      }
+      
+      var redirectUrl = isZh ? '/zh/zh/about/' : '/zh/en/about/';
+      
+      // 存储语言偏好
+      localStorage.setItem('preferred-language', isZh ? 'zh' : 'en');
+      
+      window.location.href = redirectUrl;
+    }
+    
+    // 立即执行重定向
+    redirectToLanguage();
+  </script> <meta http-equiv="refresh" content="1; url=/zh/en/about/"> <p>Redirecting...</p> </body></html>
