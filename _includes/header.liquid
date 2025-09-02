@@ -44,10 +44,14 @@
         <ul class="navbar-nav ml-auto flex-nowrap">
           {% for page in site.pages %}
             {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
-          {% endfor %}          
+          {% endfor %}            
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/en/about/' or page.permalink == '/zh/about/' or page.permalink == '/about/' %}active{% endif %}">
-            {% assign current_lang = page.lang | default: site.default_lang | default: "en" %}
+            {% if page.url contains '/zh/' %}
+              {% assign current_lang = "zh" %}
+            {% else %}
+              {% assign current_lang = "en" %}
+            {% endif %}
             <a class="nav-link" href="{{ site.baseurl }}/{{ current_lang }}/about/">
               {{ site.data.i18n[current_lang].navbar.about | default: "About" }}
               {% if page.permalink == '/en/about/' or page.permalink == '/zh/about/' or page.permalink == '/about/' %}
@@ -59,8 +63,8 @@
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% if p.nav and p.autogen == null %}
-              {% if p.dropdown %}
+            {% if p.nav and p.autogen == null %}             
+             {% if p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
                   {% if page.title == child.title %}
@@ -77,7 +81,12 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {{ site.data.i18n[page.lang].navbar[p.title] | default: p.title }}
+                    {% if page.url contains '/zh/' %}
+                      {% assign current_lang = "zh" %}
+                    {% else %}
+                      {% assign current_lang = "en" %}
+                    {% endif %}
+                    {{ site.data.i18n[current_lang].navbar[p.title] | default: p.title }}
                     {% if page.title == p.title or has_active_child %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
@@ -91,13 +100,13 @@
                           class="dropdown-item {% if page.title == child.title %}active{% endif %}"
                           href="{% if child.permalink contains '://' %}{{ child.permalink }}{% else %}{{ child.permalink | relative_url }}{% endif %}"
                         >
-                          {{ site.data.i18n[page.lang].navbar[child.title] | default: child.title }}
+                          {{ site.data.i18n[current_lang].navbar[child.title] | default: child.title }}
                         </a>
                       {% endif %}
                     {% endfor %}
                   </div>
-                </li>             
-                 {% else %}
+                </li>              
+                {% else %}
                 {% assign parent_link = p.permalink | remove: 'index.html' %}
                 <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
                   {%- if p.permalink contains '://' -%}
@@ -105,7 +114,11 @@
                   {%- elsif p.permalink contains '/blog/' -%}
                     {%- assign url = '/blog/' -%}
                   {%- else -%}
-                    {%- assign current_lang = page.lang | default: site.default_lang | default: "en" -%}
+                    {%- if page.url contains '/zh/' -%}
+                      {%- assign current_lang = "zh" -%}
+                    {%- else -%}
+                      {%- assign current_lang = "en" -%}
+                    {%- endif -%}
                     {%- assign base_path = p.url | remove_first: '/en/' | remove_first: '/zh/' -%}
                     {%- if base_path == p.url -%}
                       {%- assign url = p.url -%}
@@ -114,7 +127,12 @@
                     {%- endif -%}
                   {%- endif -%}
                   <a class="nav-link" href="{{ url | relative_url }}">
-                    {{ site.data.i18n[page.lang].navbar[p.title] | default: p.title }}
+                    {% if page.url contains '/zh/' %}
+                      {% assign current_lang = "zh" %}
+                    {% else %}
+                      {% assign current_lang = "en" %}
+                    {% endif %}
+                    {{ site.data.i18n[current_lang].navbar[p.title] | default: p.title }}
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
@@ -143,21 +161,18 @@
           {% endif %}         
           {% if site.languages and site.languages.size > 1 %}
             <li class="toggle-container">
-              {% assign current_lang = page.lang | default: site.default_lang | default: "en" %}
-              {% if current_lang == "en" %}
+              {% if page.url contains '/zh/' %}
+                <!-- Current page is Chinese, show English switcher -->
+                {% assign clean_url = page.url | remove_first: '/zh' %}
+                <a class="nav-link" href="{{ site.baseurl }}/en{{ clean_url }}">{{ site.data.i18n.en.language_switcher | default: "English" }}</a>
+              {% else %}
+                <!-- Current page is English or default, show Chinese switcher -->
                 {% if page.url contains '/en/' %}
                   {% assign clean_url = page.url | remove_first: '/en' %}
                 {% else %}
                   {% assign clean_url = page.url %}
                 {% endif %}
                 <a class="nav-link" href="{{ site.baseurl }}/zh{{ clean_url }}">{{ site.data.i18n.zh.language_switcher | default: "中文" }}</a>
-              {% else %}
-                {% if page.url contains '/zh/' %}
-                  {% assign clean_url = page.url | remove_first: '/zh' %}
-                {% else %}
-                  {% assign clean_url = page.url %}
-                {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/en{{ clean_url }}">{{ site.data.i18n.en.language_switcher | default: "English" }}</a>
               {% endif %}
             </li>
           {% endif %}
