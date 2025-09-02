@@ -96,8 +96,8 @@
                       {% endif %}
                     {% endfor %}
                   </div>
-                </li>
-              {% else %}
+                </li>             
+                 {% else %}
                 {% assign parent_link = p.permalink | remove: 'index.html' %}
                 <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
                   {%- if p.permalink contains '://' -%}
@@ -105,7 +105,13 @@
                   {%- elsif p.permalink contains '/blog/' -%}
                     {%- assign url = '/blog/' -%}
                   {%- else -%}
-                    {%- assign url = p.url -%}
+                    {%- assign current_lang = page.lang | default: site.default_lang | default: "en" -%}
+                    {%- assign base_path = p.url | remove_first: '/en/' | remove_first: '/zh/' -%}
+                    {%- if base_path == p.url -%}
+                      {%- assign url = p.url -%}
+                    {%- else -%}
+                      {%- assign url = '/' | append: current_lang | append: '/' | append: base_path -%}
+                    {%- endif -%}
                   {%- endif -%}
                   <a class="nav-link" href="{{ url | relative_url }}">
                     {{ site.data.i18n[page.lang].navbar[p.title] | default: p.title }}
@@ -135,13 +141,23 @@
               </button>
             </li>
           {% endif %}         
-           {% if site.languages and site.languages.size > 1 %}
+          {% if site.languages and site.languages.size > 1 %}
             <li class="toggle-container">
               {% assign current_lang = page.lang | default: site.default_lang | default: "en" %}
               {% if current_lang == "en" %}
-                <a class="nav-link" href="{{ site.baseurl }}/zh{{ page.url | remove_first: '/en' }}">{{ site.data.i18n.zh.language_switcher | default: "中文" }}</a>
+                {% if page.url contains '/en/' %}
+                  {% assign clean_url = page.url | remove_first: '/en' %}
+                {% else %}
+                  {% assign clean_url = page.url %}
+                {% endif %}
+                <a class="nav-link" href="{{ site.baseurl }}/zh{{ clean_url }}">{{ site.data.i18n.zh.language_switcher | default: "中文" }}</a>
               {% else %}
-                <a class="nav-link" href="{{ site.baseurl }}/en{{ page.url | remove_first: '/zh' }}">{{ site.data.i18n.en.language_switcher | default: "English" }}</a>
+                {% if page.url contains '/zh/' %}
+                  {% assign clean_url = page.url | remove_first: '/zh' %}
+                {% else %}
+                  {% assign clean_url = page.url %}
+                {% endif %}
+                <a class="nav-link" href="{{ site.baseurl }}/en{{ clean_url }}">{{ site.data.i18n.en.language_switcher | default: "English" }}</a>
               {% endif %}
             </li>
           {% endif %}
