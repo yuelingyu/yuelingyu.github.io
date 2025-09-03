@@ -1,13 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <p>&lt;!DOCTYPE html&gt;</p> <meta charset="utf-8"> <title>Redirecting...</title> <script>
-    // 智能语言检测和重定向
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <p>&lt;!DOCTYPE html&gt;</p> <meta charset="utf-8"> <title>Redirecting...</title> <script>    // 智能语言检测和重定向
     function redirectToLanguage() {
-      var userLang = navigator.language || navigator.userLanguage || 'en';
-      var isZh = userLang.toLowerCase().indexOf('zh') === 0;
+      // 检查URL参数是否要求清除偏好设置
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('reset') === 'true') {
+        localStorage.removeItem('preferred-language');
+      }
       
       // 检查是否有存储的语言偏好
       var savedLang = localStorage.getItem('preferred-language');
-      if (savedLang && (savedLang === 'zh' || savedLang === 'en')) {
-        isZh = (savedLang === 'zh');
+      var isZh = false;
+      
+      if (savedLang && savedLang === 'zh') {
+        isZh = true;
+      } else if (!savedLang) {
+        // 只有在没有保存偏好时才检查浏览器语言
+        var userLang = navigator.language || navigator.userLanguage || 'en';
+        isZh = userLang.toLowerCase().indexOf('zh') === 0;
       }
       
       var redirectUrl = isZh ? '/zh/about/' : '/about/';
