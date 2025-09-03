@@ -52,7 +52,7 @@
             {% else %}
               {% assign current_lang = "en" %}
             {% endif %}
-            <a class="nav-link" href="{{ site.baseurl }}/{{ current_lang }}/about/">
+            <a class="nav-link" href="{% if current_lang == 'zh' %}{{ site.baseurl }}/zh/about/{% else %}{{ site.baseurl }}/about/{% endif %}">>
               {{ site.data.i18n[current_lang].navbar.about | default: "About" }}
               {% if page.permalink == '/en/about/' or page.permalink == '/zh/about/' or page.permalink == '/about/' %}
                 <span class="sr-only">(current)</span>
@@ -180,32 +180,26 @@
           {% if site.languages and site.languages.size > 1 %}
             <li class="toggle-container">
               {% comment %} 智能语言切换逻辑 {% endcomment %}
-              {% assign current_page_path = page.url %}
-              
-              {% if current_page_path contains '/zh/' %}
+              {% assign current_page_path = page.url %}              {% if current_page_path contains '/zh/' %}
                 {% comment %} 当前是中文页面，显示英文切换 {% endcomment %}
                 {% assign target_lang = 'en' %}
                 {% assign display_text = site.data.i18n.zh.language_switcher | default: "English" %}
-                {% assign clean_path = current_page_path | remove_first: '/zh' %}
-                {% if clean_path == '' %}
-                  {% assign clean_path = '/about/' %}
+                {% if current_page_path == '/zh/about/' %}
+                  {% assign target_url = '/about/' %}
+                {% elsif current_page_path == '/zh/publications/' %}
+                  {% assign target_url = '/publications/' %}
+                {% else %}
+                  {% assign clean_path = current_page_path | remove_first: '/zh' %}
+                  {% assign target_url = clean_path %}
                 {% endif %}
-                {% assign target_url = '/en' | append: clean_path %}
-              {% elsif current_page_path contains '/en/' %}
+              {% else %}
                 {% comment %} 当前是英文页面，显示中文切换 {% endcomment %}
                 {% assign target_lang = 'zh' %}
                 {% assign display_text = site.data.i18n.en.language_switcher | default: "中文" %}
-                {% assign clean_path = current_page_path | remove_first: '/en' %}
-                {% if clean_path == '' %}
-                  {% assign clean_path = '/about/' %}
-                {% endif %}
-                {% assign target_url = '/zh' | append: clean_path %}
-              {% else %}
-                {% comment %} 默认语言（通常是英文），显示中文切换 {% endcomment %}
-                {% assign target_lang = 'zh' %}
-                {% assign display_text = site.data.i18n.en.language_switcher | default: "中文" %}
-                {% if current_page_path == '/' %}
+                {% if current_page_path == '/' or current_page_path == '/about/' %}
                   {% assign target_url = '/zh/about/' %}
+                {% elsif current_page_path == '/publications/' %}
+                  {% assign target_url = '/zh/publications/' %}
                 {% else %}
                   {% assign target_url = '/zh' | append: current_page_path %}
                 {% endif %}
