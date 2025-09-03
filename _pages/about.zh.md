@@ -2,6 +2,7 @@
 layout: about
 lang: zh
 title: 关于
+permalink: /zh/about/
 ---
 
 # 关于我
