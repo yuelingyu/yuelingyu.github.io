@@ -28,7 +28,7 @@ ninja.data = [{
           description: "按类别和时间倒序排列的发表文献，由 jekyll-scholar 生成。",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/publications/";
+            window.location.href = "/zh/publications/";
           },
         },{id: "nav-projects",
           title: "projects",
