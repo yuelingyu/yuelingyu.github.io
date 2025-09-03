@@ -20,7 +20,7 @@ permalink: /
         isZh = (savedLang === 'zh');
       }
       
-      var redirectUrl = isZh ? '{{ site.baseurl }}/zh/about/' : '{{ site.baseurl }}/en/about/';
+      var redirectUrl = isZh ? '{{ site.baseurl }}/zh/about/' : '{{ site.baseurl }}/about/';
       
       // 存储语言偏好
       localStorage.setItem('preferred-language', isZh ? 'zh' : 'en');
@@ -32,7 +32,7 @@ permalink: /
     redirectToLanguage();
   </script>
   <!-- 作为后备方案的meta重定向 -->
-  <meta http-equiv="refresh" content="1; url={{ site.baseurl }}/en/about/" />
+  <meta http-equiv="refresh" content="1; url={{ site.baseurl }}/about/" />
 </head>
 <body>
   <p>Redirecting...</p>
