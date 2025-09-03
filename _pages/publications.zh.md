@@ -2,7 +2,6 @@
 layout: page
 lang: zh
 title: publications
-permalink: /publications/
 description: 按类别和时间倒序排列的发表文献，由 jekyll-scholar 生成。
 nav: true
 nav_order: 2

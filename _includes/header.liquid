@@ -52,8 +52,8 @@
             {% else %}
               {% assign current_lang = "en" %}
             {% endif %}
-            <a class="nav-link" href="{% if current_lang == 'zh' %}{{ site.baseurl }}/zh/about/{% else %}{{ site.baseurl }}/about/{% endif %}">>
-              {{ site.data.i18n[current_lang].navbar.about | default: "About" }}
+            <a class="nav-link" href="{% if current_lang == 'zh' %}{{ site.baseurl }}/zh/about/{% else %}{{ site.baseurl }}/about/{% endif %}">
+              {{ site.i18n[current_lang].navbar.about | default: "About" }}
               {% if page.permalink == '/en/about/' or page.permalink == '/zh/about/' or page.permalink == '/about/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
@@ -96,13 +96,13 @@
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
-                  >
+                  
                     {% if page.url contains '/zh/' %}
                       {% assign current_lang = "zh" %}
                     {% else %}
                       {% assign current_lang = "en" %}
                     {% endif %}
-                    {{ site.data.i18n[current_lang].navbar[p.title] | default: p.title }}
+                    {{ site.i18n[current_lang].navbar[p.title] | default: p.title }}
                     {% if page.title == p.title or has_active_child %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
@@ -114,9 +114,8 @@
                       {% else %}
                         <a
                           class="dropdown-item {% if page.title == child.title %}active{% endif %}"
-                          href="{% if child.permalink contains '://' %}{{ child.permalink }}{% else %}{{ child.permalink | relative_url }}{% endif %}"
-                        >
-                          {{ site.data.i18n[current_lang].navbar[child.title] | default: child.title }}
+                          href="{% if child.permalink contains '://' %}{{ child.permalink }}{% else %}{{ child.permalink | relative_url }}{% endif %}"                        >
+                          {{ site.i18n[current_lang].navbar[child.title] | default: child.title }}
                         </a>
                       {% endif %}
                     {% endfor %}
