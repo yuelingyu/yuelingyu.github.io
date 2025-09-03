@@ -10,7 +10,7 @@
         isZh = (savedLang === 'zh');
       }
       
-      var redirectUrl = isZh ? '/zh/about/' : '/en/about/';
+      var redirectUrl = isZh ? '/zh/about/' : '/about/';
       
       // 存储语言偏好
       localStorage.setItem('preferred-language', isZh ? 'zh' : 'en');
@@ -20,4 +20,4 @@
     
     // 立即执行重定向
     redirectToLanguage();
-  </script> <meta http-equiv="refresh" content="1; url=/en/about/"> <p>Redirecting...</p> </body></html>
+  </script> <meta http-equiv="refresh" content="1; url=/about/"> <p>Redirecting...</p> </body></html>
