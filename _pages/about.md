@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='#'>Assistant Processor</a>. @Ningbo Institute of Materials Technology and Engineering
 
 profile:
   align: right
