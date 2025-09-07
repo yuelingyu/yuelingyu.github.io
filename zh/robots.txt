@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://yuelingyu.github.io/zh/sitemap.xml
