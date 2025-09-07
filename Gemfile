@@ -23,6 +23,7 @@ group :jekyll_plugins do
     gem 'jemoji'
 
     gem 'classifier-reborn'  # used for content categorization during the build
+    # gem 'jekyll-multiple-languages-plugin'  # Removed to avoid conflicts with manual multilingual setup
 end
 
 # Gems for development or external data fetching (outside :jekyll_plugins)
